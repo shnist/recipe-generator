@@ -1,0 +1,23 @@
+{
+  "name": "recipe-generator",
+  "version": "0.1.0",
+  "description": "Generates a random recipe from ingredients you give it",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shnist/recipe-generator.git"
+  },
+  "keywords": [
+    "recipe",
+    "generator"
+  ],
+  "author": "Aaron Faber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shnist/recipe-generator/issues"
+  },
+  "homepage": "https://github.com/shnist/recipe-generator"
+}
