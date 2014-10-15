@@ -54,11 +54,7 @@ describe('recipe generator module', function () {
         });
 
         it('should include the ending phrase', function () {
-
-        });
-
-        it('should include at least one phrase from the phrase dictionary', function () {
-
+            expect(result).to.contain(phraseDictionary.lastPhrase);
         });
     });
 });

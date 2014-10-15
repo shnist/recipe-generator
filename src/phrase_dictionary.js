@@ -1,9 +1,7 @@
-module.exports = [
-    'heat for 30 minutes',
-    'beat until soft and fluffy',
-    'take'
+module.exports.phrases = [
+    'and heat for 30 minutes',
+    'and beat until soft and fluffy',
+    'and add 10 grams of cinnamon'
 ];
-
-
 module.exports.firstPhrase = 'Take';
-module.exports.finalPhrase = 'Serve and enjoy!';
+module.exports.lastPhrase = '. Serve and enjoy!';
