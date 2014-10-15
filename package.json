@@ -4,7 +4,7 @@
   "description": "Generates a random recipe from ingredients you give it",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "cd test && mocha"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/shnist/recipe-generator/issues"
   },
-  "homepage": "https://github.com/shnist/recipe-generator"
+  "homepage": "https://github.com/shnist/recipe-generator",
+  "devDependencies": {
+    "mocha": "^1.21.5",
+    "chai": "^1.9.2"
+  }
 }
