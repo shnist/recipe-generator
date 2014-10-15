@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var errorDictionary = require('../src/error_dictionary');
-var generateRecipeFrom = require('../src/index');
+var phraseDictionary = require('../src/phrase_dictionary');
+var createRecipeFrom = require('../src/index');
 
 describe('recipe generator module', function () {
     describe('when I have inputted more than two ingredients', function () {
@@ -8,7 +9,7 @@ describe('recipe generator module', function () {
 
         it('should return an error', function () {
             var errorMessage = errorDictionary.MORE_THAN_TWO_INGREDIENTS;
-            expect(function () {generateRecipeFrom(ingredients)}).to.throw(errorMessage);
+            expect(function () {createRecipeFrom(ingredients)}).to.throw(errorMessage);
         });
     });
 
@@ -17,7 +18,7 @@ describe('recipe generator module', function () {
 
         it('should return an error', function () {
             var errorMessage = errorDictionary.LESS_THAN_TWO_INGREDIENTS;
-            expect(function () {generateRecipeFrom(ingredients)}).to.throw(errorMessage);
+            expect(function () {createRecipeFrom(ingredients)}).to.throw(errorMessage);
         });
     });
 
@@ -26,7 +27,38 @@ describe('recipe generator module', function () {
 
         it('should return an error', function () {
             var errorMessage = errorDictionary.NOT_AN_ARRAY;
-            expect(function () {generateRecipeFrom(ingredients)}).to.throw(errorMessage);
+            expect(function () {createRecipeFrom(ingredients)}).to.throw(errorMessage);
+        });
+    });
+
+    describe('when I pass in valid parameters', function () {
+        var ingredients;
+        var result;
+
+        beforeEach(function () {
+            ingredients = ['apples', 'bananas'];
+            result = createRecipeFrom(ingredients);
+        });
+
+        it('should return a recipe string', function () {
+            expect(result).to.be.a('string');
+        });
+
+        it('should include the ingredients in the recipe', function () {
+            expect(result).to.contain(ingredients[0]);
+            expect(result).to.contain(ingredients[1]);
+        });
+
+        it('should include the starting phrase', function () {
+            expect(result).to.contain(phraseDictionary.firstPhrase);
+        });
+
+        it('should include the ending phrase', function () {
+
+        });
+
+        it('should include at least one phrase from the phrase dictionary', function () {
+
         });
     });
 });
